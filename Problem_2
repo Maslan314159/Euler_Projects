@@ -1,0 +1,32 @@
+"""
+Problem_2:
+İlk iki terimi sırasıyla 1 ve 2 olan fibonacci dizisinin bundan sonraki her terimi
+kendisinden önceki 2 terimin toplamo olarak yazılır.
+Fibonacci dizisinin ilk 10 terimi şu şekildedir:
+1-2-3-5-8-13-21-34-55-89
+Bu bilgiyi dikkate alarak 4 milyondan(4000000) küçük fibonacci dizisin terimlerinden yanlızca
+çift olanların toplamını bulunuz.
+
+"""
+a = 1
+b = 2
+cift_fibonacci = []
+tek_fibonacci = []
+cift_fibonacci.append(2)
+
+toplam = 2
+
+while True:
+    c = a+b
+    a, b = b, c
+
+    if c % 2 == 0:
+        cift_fibonacci.append(c)
+        toplam += c
+    else:
+        tek_fibonacci.append(c)
+    if c > 4000000:
+        break
+print(toplam)
+print(cift_fibonacci)
+print(tek_fibonacci)
