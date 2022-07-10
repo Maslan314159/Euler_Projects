@@ -1,0 +1,26 @@
+"""
+Problem3:
+ 600851475143 olarak verilen bu sayının asal çarpanlarından 
+ en büyük olanı veren bir program yazacağız. 
+"""
+
+def asal_carpan(sayi):
+    A=list()
+    k=int(sayi**0.5)
+    for i in range(2,k+1):
+        while(sayi%i==0):
+            A.append(i)
+            sayi /=i
+    if(sayi!=1):
+        sayi=int(sayi)
+        A.append(sayi)
+    print(A)
+    print(set(A))
+    print(max(set(A)))
+print(asal_carpan(600851475143))
+""" 
+while True:
+    x=int(input("sayı gir.....  "))
+    fonk(x)
+
+"""
